@@ -7,5 +7,4 @@ set :deploy_to, '/var/bots/hina'
 set :rbenv_type, :user
 set :rbenv_ruby, '2.2.3'
 set :rbenv_path, '/home/ec2-user/.rbenv'
-
-set :pty, true
+set :foreman_env, '/etc/environment'
