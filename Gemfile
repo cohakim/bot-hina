@@ -5,4 +5,4 @@ gemspec
 
 gem 'lita'
 gem 'lita-slack'
-
+gem 'foreman'
