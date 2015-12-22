@@ -6,3 +6,4 @@ gemspec
 gem 'lita'
 gem 'lita-slack'
 gem 'foreman'
+gem 'activesupport', require: 'active_support/all'

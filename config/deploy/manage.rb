@@ -3,7 +3,7 @@ server 'hina.kurorekishi.me', user: 'ec2-user', roles: [:web, :app, :db]
 namespace :hina do
   task :start do
     on roles(:web) do
-      execute "bash -lc 'cd #{current_path}; nohup bundle exec foreman start &'"
+      execute "cd #{current_path}; (nohup bundle exec foreman start &) >& /dev/null"
     end
   end
 
@@ -20,4 +20,4 @@ namespace :hina do
     end
   end
 end
-#after 'deploy:finished', 'hina:restart'
+after 'deploy:finished', 'hina:restart'
