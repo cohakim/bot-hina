@@ -15,8 +15,8 @@ namespace :hina do
 
   task :restart do
     on roles(:web) do
-      stop
-      start
+      invoke 'hina:stop'
+      invoke 'hina:start'
     end
   end
 end
