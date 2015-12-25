@@ -20,4 +20,3 @@ namespace :hina do
     end
   end
 end
-after 'deploy:finished', 'hina:restart'
