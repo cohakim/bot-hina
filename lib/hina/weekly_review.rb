@@ -4,7 +4,8 @@ module Lita
       route(/^weekly_review\s+(.+)/, :weekly_review, command: true)
       route(/^current_week/, :current_week, command: true)
 
-      JENKINS_BUILD_URL = 'http://manage.kurorekishi.me/jenkins/job/WeeklyReview/buildWithParameters?REPORT_TYPE=%s&YEAR=%s&WEEK_NUM=%s'
+      CHANNEL           = 'hina-channel'
+      JENKINS_BUILD_URL = "http://manage.kurorekishi.me/jenkins/job/WeeklyReview/buildWithParameters?REPORT_TYPE=%s&YEAR=%s&WEEK_NUM=%s&CHANNEL=#{CHANNEL}"
       REQUEST_COMMAND   = "curl -sS -X POST --user #{ENV['JENKINS_REQUEST_TOKEN']} '#{JENKINS_BUILD_URL}'"
       JENKINS_WEEKLY_REVIEW_JOBS = %w(read iteration commit pull_request body_metrics)
 
